@@ -26,4 +26,4 @@ data <- read_csv("data.csv")  #this loads the data file and saves it in the data
 
 A **markdown** file can also be used to provide a document for your code. This is a basic text formatting language (similar to LaTeX) that allows you to mix text with images, links, code etc. This document itself is markdown! 
 
-In R, you can create RMarkdown files which combines markdown while running your code. This allows you to produce different outputs (including HTML, PDFs, etc) that mix free text with code that runs. There is an example in this repo you can download to see.
+In R, you can create RMarkdown files which combines markdown while running your code. This allows you to produce different outputs (including HTML, PDFs, etc) that mix free text with code that runs. There is an example in this repo you can download to see (file extension .Rmd).
