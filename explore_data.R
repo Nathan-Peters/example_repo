@@ -5,7 +5,7 @@ astronauts <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytu
 astronauts %>% count(nationality, sort=TRUE)
 
 astronauts_2 <- astronauts %>%  
-  mutate(mission_age=year_of_mission+year_of_birth, 
+  mutate(mission_age=year_of_mission-year_of_birth, 
          nationality=as.factor(case_when(
            nationality=="U.S." ~ "US", 
            str_detect(nationality,"Russia")~"Russia", 
