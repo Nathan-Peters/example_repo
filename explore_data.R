@@ -18,4 +18,6 @@ astronauts_2$nationality<-factor(astronauts_2$nationality, levels(astronauts_2$n
 
 astronauts_2 %>% ggplot(aes(x=year_of_mission, y=mission_age, color=mission_number, size= hours_mission))+
   geom_point(alpha=0.5, aes(shape=nationality))+
-  facet_wrap(~nationality, nrow=3)
+  facet_wrap(~nationality, nrow=3)+
+  labs(y="Age at time of mission", x="Year of mission", title="Space missions and the age of astronauts at take-off")+
+  scale_color_brewer(palette = "YlOrRd")
