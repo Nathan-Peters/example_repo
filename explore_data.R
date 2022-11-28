@@ -20,4 +20,23 @@ astronauts_2 %>% ggplot(aes(x=year_of_mission, y=mission_age, color=mission_numb
   geom_point(alpha=0.5, aes(shape=nationality))+
   facet_wrap(~nationality, nrow=3)+
   labs(y="Age at time of mission", x="Year of mission", title="Space missions and the age of astronauts at take-off")+
-  scale_color_brewer(palette = "YlOrRd")
+  scale_color_brewer(palette = "YlOrRd")+   #package with some nicer color themes
+  theme(plot.background = element_rect(fill = "#1d1330", color = "#1d1330"), 
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(color = "#3c2e54"),
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#1d1330", color = "#1d1330"),
+        text = element_text(color = "white"),
+        axis.text = element_text(color = "white"),
+        axis.title = element_text(color = "white"),
+        axis.ticks = element_blank(),
+        legend.background = element_rect(fill = "#1d1330", color = "#1d1330"),
+        legend.key = element_rect(fill = "#1d1330", color = "#1d1330"),
+        strip.background = element_rect(fill = "#1d1330", color = "#1d1330"),
+        strip.text = element_text(color = "#1d1330")
+  )+ #change background and text colors. Strip is for facet label items (Setting text to same color of background to hide)
+  scale_shape_manual(values = c(16, 15, 17))+ #manually pick what point shapes to use 
+  scale_size_continuous(labels = scales::comma)+  #reformat numbers in legend
+  guides(color = guide_legend("Mission number", order=1, ncol=2, override.aes = list(size = 3)),
+         shape = guide_legend("Nationality", order=3,override.aes = list(size = 3, color="white")),
+         size = guide_legend("Mission length/ hr", order=2, override.aes = list(color="white")))  #edit how legend looks; name, order, how many rows/columns to use for each, and overrides of key color and size
