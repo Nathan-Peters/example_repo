@@ -13,6 +13,9 @@ astronauts_2 <- astronauts %>%
            ), 
          mission_number=as.factor(mission_number))
 
+
+astronauts_2$nationality<-factor(astronauts_2$nationality, levels(astronauts_2$nationality)[c(3:1)])  #reorder nationality in reverse order
+
 astronauts_2 %>% ggplot(aes(x=year_of_mission, y=mission_age, color=mission_number, size= hours_mission))+
   geom_point(alpha=0.5, aes(shape=nationality))+
   facet_wrap(~nationality, nrow=3)
