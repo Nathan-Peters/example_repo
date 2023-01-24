@@ -3,8 +3,6 @@
 <<<<<<< HEAD
 =======
 
-
-
 hi <- "Hi"
 hi <- "Hi from Elisabetta :D"
 
