@@ -1,7 +1,6 @@
 #Nathan was here
 1+1
-<<<<<<< HEAD
-=======
+
 
 
 
@@ -14,4 +13,4 @@ me<- 2+1
 #and me
 3*5
 
->>>>>>> ea6c2dd48bb060300e6fe89cff42f069cb57f716
+
